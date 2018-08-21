@@ -12,7 +12,7 @@
        <h1>学习WEB前端开发</h1>
        <p>
            <?php
-             echo "ok!"
+             print "ok!"
            ?>
        </p>
    </main>
