@@ -12,8 +12,8 @@
        <h1>学习WEB前端开发</h1>
        <p>
            <?php
-             print "ok!"
-           ?>
+            print "ok!"
+            ?>
        </p>
    </main>
    <footer role="contentinfo">
