@@ -360,3 +360,51 @@ span没有任何语义，只适合包围字词或短语。
   * low、high和optimun，低、高和最优值。
   * meter不能标记没有范围的值。不能与progress混在一起用。
 * progress元素：显示进度条，文本内容要反映当前进度。三个属性：max最大进度，value当前进度，form如果标准表单中，将form的值设为form的id。
+
+## 第五章 图像
+
+### 5.1 关于WEB图像
+
+web最广泛的三种格式是GIF、JPEG和PNG。
+
+* JPEG是有损格式，文件比较小。
+* png与gif是无损格式，文件比较大，图标、标识等颜色比较少应使用png-8。
+* 应使用png-8和png-32创建alpha透明度的图像。
+* 图像大小应该合理。
+* webp 既支持有损压缩也支持无损压缩，产生的文件大小也小于jpeg和png。
+* 可以在网页上使用可缩放矢量图形（SVG）。
+* 动画通常使用CSS、javascript、HTML5 Canvas和SVG。flash慢慢被淘汰。
+
+### 5.2 获取图像
+
+### 5.3 图像编辑器
+
+photoshop gimp等
+
+### 5.4 保存图像
+
+### 5.5在页面中插入图像
+
+~~~ html
+<img src="" alt="">
+~~~
+
+### 5.6 提供替代文本
+
+alt 属性值就是替代文本，如果图像对内容的较小，则可以提供空的替代文本,只有当图像不能显示时才能显示。
+如果要标题的化，把img放入figure和figcaption中。
+
+### 5.7 指定图像尺寸
+
+如果指定图像尺寸，浏览器可以预留空间，在加载图像的同时让文本显示在周围，保存布局的稳定。
+
+### 5.9 在浏览器中改变图像的尺寸
+
+通过为图像指定新的高度和宽度，这样可以为高分辨率的显示屏显示高分辨率图像。
+
+### 5.10 为网站添加图标
+
+~~~html
+<link rel="shortcut icon" href="favicon.ico" >
+<link rel="apple-touch-icon" href="apple-touch-icon.png" >
+~~~
