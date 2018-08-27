@@ -408,3 +408,5 @@ alt 属性值就是替代文本，如果图像对内容的较小，则可以提�
 <link rel="shortcut icon" href="favicon.ico" >
 <link rel="apple-touch-icon" href="apple-touch-icon.png" >
 ~~~
+
+如果根目录有favicon.ico文件，不指定link元素，也可以显示出来。
