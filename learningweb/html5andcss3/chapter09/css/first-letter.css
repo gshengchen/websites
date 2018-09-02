@@ -1,0 +1,9 @@
+body{
+    font:100%/1.3 sans-serif;
+}
+
+p:first-letter{
+    color:red;
+    font-size:1.4em;
+    font-weight:bold;
+}
