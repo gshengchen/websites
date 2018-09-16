@@ -1,0 +1,84 @@
+body {
+    /* font-family:verdana, Geneva, Tahoma, sans-serif;
+    font-size: 100%; */
+    font: 100% verdana, Geneva, Tahoma, sans-serif;
+    /* color: blue; */
+    background-color: #88b2d2;
+
+}
+
+h1,
+h2 {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    font-weight: normal;
+}
+
+.intro{
+    line-height: 1.45;
+    background-color: #686a63;
+    color: #fff;
+}
+
+/* p{
+    font-style: italic;
+    
+} */
+em,a:link,.intro  .subhead{
+    font-weight: bold;
+}
+
+h1{
+    font-size: 2.1875em;
+    /* 35px/16px */
+}
+
+h2{
+    background-color: #eaebef;
+    color: #7d717c;
+    font-size: 1.75em;
+    /* 28px/16px */
+}
+
+.intro .subhead{
+    font-size: 1.125em;
+    /* 18px/16px */
+}
+
+.intro p{
+    font-size: 1.00625em;
+    /* 17px/16px */
+}
+
+.project p{
+    font-size: 0.9375em;
+    /* 15px/16px */
+
+    line-height: 1.65;
+    /* 15px*1.65=24.75 */
+}
+
+/* ::::::链接::::::: */
+
+a:link{
+    color: #e10000;
+}
+
+a:visited{
+    color: #b44f4f;
+}
+
+a:hover{
+    color: #f00;
+}
+
+.intro a{
+    color: #fdb09d;
+}
+
+.intro a:hover{
+    color: #fec4b6;
+}
+
+.architect{
+    background-color: #fff;
+}

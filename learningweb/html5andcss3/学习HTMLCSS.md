@@ -675,3 +675,64 @@ input，select，textarea{
 * lighter 更细
 * normal 取消粗体
 * 100-900 400是正常粗体
+
+### 10.6 设置字体大小
+
+设置字体大小有两种方法：
+
+1. 使用像素
+2. 使用百分数、em或者rem指定相对父元素文本的大小。
+
+通常在body里设置属性font-size：100%为em字体大小设置了参考基准。这里的100%将被翻译为默认字体大小（大多数为16px）。
+rem与em类似，不过它总是以根元素（html）为基准，而em是以父元素为基准。设置了相对字体大小的元素的子元素会继承这个大小。
+font-size关键字：xx-small、x-small、small、medium、large、x-large或者xx-large。
+
+### 10.7 设置行高
+
+行距就是每行之间的距离，使用大的行高使文本易读，对于超过一行的标题，使用小的行距会更美观。行高的属性值：
+
+* 数字，它与字体大小相乘得出需要的行高，推荐使用，所有子元素可以继承这个因子。
+* 使用像素、em或者百分数，子元素只继承产生的行高。
+
+### 10.8 同时设置所有字体值
+
+可以使用font简写属性同时设置字体样式、粗细、变体、大小、行高和字体系列，使用font简写属性不要求指定所有字体属性规则：
+
+* 至少包含字体大小和字体系列属性，先是字体大小，再是字体系列。
+* 每个属性用空格分隔。
+* 行高是可选的，在字体大小后用“/”分隔。
+* 前面样式、粗细、变体次序无关紧要，也可以忽略。，如果忽略自动设置成normal。
+* font属性是继承的。
+
+### 10.9 设置颜色
+
+修改网页文本的颜色，使用color属性，属性值是：颜色名称（关键字）、十六进制、RGB、RGBA、HSL、HSLA。除了link元素，color属性继承父元素。
+
+### 10.10 设置背景
+
+几乎可以对任何元素设置背景样式，甚至包括表单和图像。设置背景的属性很多，包括：background-color、background-image、background-repeat、background-attachment、background-position，也可以使用background简记法。
+
+* background-color 设置背景色，默认值是transparent（透明的）。
+* background-image 使用图像作为背景，属性值url（image）。如果是none表示不使用背景图像，是默认值。
+* background-repeat 属性值为repeat、repeat-x、repeat-y以及no-repeat，省略background-repeat相当于将其设为repeat。
+* min-hegiht 设置元素最小高度。
+* background-attachment控制背景图像是否随页面滚动,属性值：fixed背景图像附在浏览器的窗口上，scroll访问者滚动页面时背景图像会移动，如果忽略此属性background-attachment，就默认scroll，local只有滚动背景图像所在的元素时，背景图像才移动。
+* background-position 指定背景图像的位置，属性值x、y表示距离左上角的绝对距离或百分数，允许负值；也可以使用关键字：left、center、right 表示x，top、center、bottom表示y，如果使用关键字顺序无关。默认值是top left即左上角（0，0）。
+* background简记法指定任何可接受的background属性值，包括：background-color、background-image、background-repeat、bactground-attachment和background-position顺序无关。
+* 尽量使用background简写法，没有指定的属性值就使用默认值
+* background-size 属性规定背景图片的尺寸,属性值x，y可以是像素或百分比。contain 在显示完整图像的情况下尽可能扩大图像尺寸。cover在填充背景区域下，尽可能小。
+* CSS3 background-origin 属性规定背景图片的定位区域。背景图片可以放置content-box、padding-box 或 border-box 区域。
+* background-clip 属性规定背景的绘制区域，属性值同background-origin。
+
+### 10.11 控制间距
+
+* 指定字间距：word-spacing 属性值是一个带单位的数字。
+* 指定字偶距：letter-spacing 属性值是一个带单位的数字。
+* 字间距与字偶距可以是负数
+* normal与0 可以将字间距与字偶距设置成默认值。
+
+### 10.12 添加缩进
+
+* text-indent属性值是一个带单位的数字。
+* 使用负数会产生悬挂缩进
+* 使用0，忽略继承的缩进
