@@ -735,4 +735,36 @@ font-size关键字：xx-small、x-small、small、medium、large、x-large或者
 
 * text-indent属性值是一个带单位的数字。
 * 使用负数会产生悬挂缩进
-* 使用0，忽略继承的缩进
+* 使用0，忽略继承的缩进。
+
+### 10.13 对齐文本
+
+text-align属性值：left左对齐、right右对齐、center居中对齐以及justify两端对齐。
+
+* text-align适用块元素
+* text-align属性是继承的
+
+### 10.14 修改文本的大小写
+
+text-transform的属性值：capitalize每个单词的首字母大写、uppercase使用字母大写、lowercase所有字母小写、none取消继承，保持字母原样。
+
+### 10.15 使用小型的大写字母
+
+font-variant属性值：small-caps 小型大写字母，none 正常字母，取消继承。
+
+### 10.16 装饰文本
+
+text-decoration属性装饰文本，属性值：
+
+* underline 下划线
+* overline 上划线
+* line-through 删除线
+* none 取消文本装饰，取消继承
+
+### 10.17 设置空白属性
+
+white-space设置空白属性，属性值：
+
+* pre 显示原文使用空格
+* nowrap 确保所有空格不断行
+* normal 按正常方式处理空格
