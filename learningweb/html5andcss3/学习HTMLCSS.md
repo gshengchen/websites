@@ -718,7 +718,7 @@ font-size关键字：xx-small、x-small、small、medium、large、x-large或者
 * min-hegiht 设置元素最小高度。
 * background-attachment控制背景图像是否随页面滚动,属性值：fixed背景图像附在浏览器的窗口上，scroll访问者滚动页面时背景图像会移动，如果忽略此属性background-attachment，就默认scroll，local只有滚动背景图像所在的元素时，背景图像才移动。
 * background-position 指定背景图像的位置，属性值x、y表示距离左上角的绝对距离或百分数，允许负值；也可以使用关键字：left、center、right 表示x，top、center、bottom表示y，如果使用关键字顺序无关。默认值是top left即左上角（0，0）。
-* background简记法指定任何可接受的background属性值，包括：background-color、background-image、background-repeat、bactground-attachment和background-position顺序无关。
+* background简记法指定任何可接受的background属性值，包括：background-color、background-image、background-repeat、background-attachment和background-position顺序无关。
 * 尽量使用background简写法，没有指定的属性值就使用默认值
 * background-size 属性规定背景图片的尺寸,属性值x，y可以是像素或百分比。contain 在显示完整图像的情况下尽可能扩大图像尺寸。cover在填充背景区域下，尽可能小。
 * CSS3 background-origin 属性规定背景图片的定位区域。背景图片可以放置content-box、padding-box 或 border-box 区域。
