@@ -1,0 +1,11 @@
+article,
+section,
+aside,
+nav,
+footer,
+header,
+figure,
+figcaption,
+main{
+    display: block;
+}
