@@ -129,4 +129,45 @@ hypot = Math.sqrt(x*x + y*y);
 |\uXXXX|四位16进制XXXX 指定的Unicode字符|
 |\XXX|1-3位八进制指定的latin-1字符，现在不支持|
 
-* 字符串的使用
+* 字符串的使用：javascript的字符串内部特性,运算符“+”作用与字符串会把两个字符串连接起来；字符串的length属性，确定字符串的长度；charAt提取单个字符；substr提取子字符串。indexof查找字符位置。
+
+~~~javascript
+msg = "hello, " + "world" ;//生成字符串 hello， world
+lastChar = msg.charAt(msg.length -1) ; // 生成d
+sub= msg.substr(1,4);//生成ello，。
+i = msg.indexOf('e');// 生成字符e的位置1;
+~~~
+
+* 把数字转换为字符串：数字会在需要的时候自动转换为字符串。
+
+~~~javascript
+var n = 100;
+var s = n + "bottles of beer on the wall.";
+var n = n + "";//加一个空字符串，可以把数字转换成字符串
+var String_value = String(100);//用String（）显示转换成字符串。
+var n2 =2018;
+var strNum = n2.toString();//使用toString()方法转换。
+~~~
+
+基本的数字转换成Number对象，就可以调用toString方法，该方法有一个可选的参数，用来指定转换的基数（2-36）。
+
+~~~javascript
+var n =17;
+bin_string = n.toString(2);//二进制
+oct_string = "0" + n.toString(8);//八进制
+hex_string = "0X" + n.toString(16);//十六进制 
+~~~
+
+JavaScript1.5版本后，Number对象增加三个函数：toFixed方法转换数字为显示参数指定的小数位的字符串；toExponential方法使用指数表示法，整数部分为1为，小数部分的位数有参数指定；toPrecision方法指定以参数的位数来显示数字，如果不能显示整个整数就使用指数表示法。以上的方法都进行适合的四舍五入。
+
+~~~javascript
+var n = 123456.789;
+console.log(n.toFixed(0));// 123457
+console.log(n.toFixed(2));// 123456.79
+console.log(n.toExponential(1));//1.2e+5
+console.log(n.toExponential(3));//1.235e+5
+console.log(n.toPrecision(4));//1.235e+5
+console.log(n.toPrecision(7));//123456.8
+~~~
+
+
