@@ -1,5 +1,3 @@
-/*  devel:true */
-
 var msg ='hello, ' + 'world' ; //生成字符串 hello， world
 var lastChar = msg.charAt(msg.length -1) ; // 生成d
 var sub= msg.substr(1,4);//生成ello。

@@ -1,4 +1,3 @@
-/* devel:true */
 
 var n = 100;
 var s = n + ' bottles of beer on the wall.';
@@ -12,7 +11,7 @@ console.log(n);
 console.log(String_value);
 console.log(strNum);
 
-var n =16;
+var n = 0xff;
 var bin_string = n.toString(2);//二进制
 var oct_string = '0' + n.toString(8);//八进制
 var hex_string = '0X' + n.toString(16);//十六进制 

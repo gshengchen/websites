@@ -1,4 +1,4 @@
-# Java Script Guide 权威指南
+# Java Script Guide 权威指南(V5)
 
 [TOC]
 
@@ -170,4 +170,159 @@ console.log(n.toPrecision(4));//1.235e+5
 console.log(n.toPrecision(7));//123456.8
 ~~~
 
+* 把字符串转换为数字
 
+当字符串用在数字环境中，它会自动转换成数字。
+
+~~~javascript
+var product = '12'*'2'; // 24
+var str_vaule = '1234';
+var number = str_value - 0;//快速转换为数字，但不能用+；
+~~~
+
+Number对象的构造函数Number（）可以转换数字，但比较严格，虽然允许开头和结尾的空白，不能出现其他非数字字符串。
+parseInt、parseFloat 可以在字符串开始处转换数字，parseInt第二个参数可以指定解析的基数。
+
+~~~javascript
+parseInt('3 blind mice');//3
+parseFloat('3.14 meters');//3.14
+parseInt('12.51');//13
+parseInt('0xFF');//255
+
+parseInt('11',2);//3 (1*2+1)
+parseInt('ff',16);//255 (15*16+15);
+parseInt('077',8);//63 (7*8+7);
+parseInt('077',10);//77 (7*10+7);
+
+parseInt('$72.47');// 不能解析返回NaN
+
+~~~
+
+### 3.3 布尔值
+
+布尔数据类型只有两个值：true、false，布尔值通常是javascript程序中比较的结果，主要用于JavaScript的控制结构。
+布尔类型转换：布尔值很容易转换，往往是自动转换。
+
+* 在数字环境中，true转换为1，false为0；在字符串环境中，true转换为“true”，false转换为“false”；
+* 在布尔值环境中，数字0和NaN转换为false，其他为true；
+* 布尔值环境中，空字符串为false，其他为true
+* 空值和未定义的值为false，任何非空的对象、数组、函数转换为true。
+* 如果让类型转换为显示的，使用Boolean（）函数，或者，对使用布尔非运算两次。
+
+~~~javascript
+var x_as_boolean = Boolean(x);
+var x_as_boolean = !!x;
+~~~
+
+### 3.4 函数
+
+函数（function）是一个可执行的代码段，由javascript程序定义或Javascript实现的预定义。
+函数的特性：
+
+* 可以带实际参数或形式参数
+* 可以由一个返回结果
+* 函数是一种数据类型是，真正的数值，可以存储在变量、数组、对象中，也可以作为参数传递给其他函数
+* 如果一个函数赋给某个对象的属性时，它通常作为那个对象的方法来引用。
+
+函数定义方法：
+
+~~~javascript
+//方法一
+function square(x){
+    return x*x;
+}
+
+//方法二，直接量
+var square = function (x){return x*x;};
+
+//方法三，直接量，构造函数方式
+
+var square = Function('x','return x*x');
+~~~
+
+### 3.5 对象
+
+对象（object）是已命名的数据的集合。这些已命名的数据通常被作为对象的属性来引用。引用方法就是先引用对象，在其后加实心点和要引用的属性。
+
+* 对象的属性与javascript变量相似，属性可以是任何数据类型，包括数组、函数和其他对象。如：document.myform.button
+* 如果一个函数值是存储在某个对象的属性中，那么此函数通常称为方法，属性名也就是方法名。如：document.write('this is a test')。
+* JavaScript中的对象可以作为关联数组使用，包含属性名的字符串作为下标来访问属性值。如：image["width"]、image["height"]。
+* 创建对象：对象通过特殊的构造函数创建的。
+
+~~~javascript
+var o = new Object();
+var now = new Date();
+var pattern = new RegExp("\\sjava\\s","i");
+
+var point = new Object();
+point.x = 2.3 ;
+point.y = -1.2;
+~~~
+
+* 对象直接量，也称对象初始化程序，是由一个列表构成的，列表元素是用“：”分隔的属性/值对，元素之间用逗号隔开，整个列表包含在花括号中。
+
+~~~javascript
+
+var point = {x:14,y:1.6};
+~~~
+
+* 对象直接量可以嵌套。
+
+~~~javascript
+var rect={
+    upperLeft:{x:2,y:2},
+    lowerRight:{x:4,y:4}
+}
+~~~
+
+* 对象直接量的属性值，不比是常量，可以是任何的表达式，属性名也可以是字符串。
+
+~~~javascript
+var square = {
+    "upperLeft" : {x:point.x,y:point.y},
+    'lowerRight':{x:(point.x+side),y:(point.y+side)}
+}
+~~~
+
+* 对象转换：
+
+1. 非空对象用于布尔环境，它转换为true。
+2. 对象用于字符串环境，调用toString方法，返回字符串值。
+3. 对象用于数字环境，对象首先调用valueOf方法，返回一个基本类型值，然而，valueOf方法大多数返回的是对象自己，在这个情况下，通常先调用toString方法返回一个字符串，再试图转换成数字值。
+
+### 3.6 数组
+
+数组（Array）和对象一样是数组的集合，对象中每个数值都有名字，而数组只能靠下标访问。下标的数值是从0开始的一个非负整数。
+数组可以存储任何一种javascript数据类型，数组元素不必具有相同的数据类型，同时也不支持多维数组，不过，数组元素可以是数组。
+
+* 数组的创建，可以使用构造函数Array来创建数组：
+
+~~~javascript
+var a = new Array();
+a[0] =1.2;
+a[1] = "Javascript";
+a[2] = true;
+a[3] = {x:1,y:2};
+~~~
+
+* 通过把数组元素传递给Array构造函数可以初始化数组：
+
+~~~javascript
+var a2 = new Array(1.2,"javascript",true,{x:2,y:2});
+~~~
+
+* 如果只向Array构造函数传递一个参数，那么该参数指定的是数组的长度。
+
+~~~javascript
+var a3 = new Array(10);
+~~~
+
+* 数组直接量，是一个封闭在方括号内的序列，数组元素不必仅限是常量，可以是任意表达式，同时还可以存放未定义的元素。
+
+~~~javascript
+var a4 = [1,23,"chen",{x:34,y:12}];
+var matrix = [[1,2,3],[4,5,6],[7,8,9]];
+var base = 1024;
+var table = [base,base+2,base+4];
+var sparseArray = [1,,,,5];
+~~~
