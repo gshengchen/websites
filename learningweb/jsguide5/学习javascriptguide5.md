@@ -155,7 +155,7 @@ var strNum = n2.toString();//使用toString()方法转换。
 var n =17;
 bin_string = n.toString(2);//二进制
 oct_string = "0" + n.toString(8);//八进制
-hex_string = "0X" + n.toString(16);//十六进制 
+hex_string = "0X" + n.toString(16);//十六进制
 ~~~
 
 JavaScript1.5版本后，Number对象增加三个函数：toFixed方法转换数字为显示参数指定的小数位的字符串；toExponential方法使用指数表示法，整数部分为1为，小数部分的位数有参数指定；toPrecision方法指定以参数的位数来显示数字，如果不能显示整个整数就使用指数表示法。以上的方法都进行适合的四舍五入。
