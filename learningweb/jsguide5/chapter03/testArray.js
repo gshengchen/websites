@@ -21,6 +21,7 @@ var a4 = [1,23,"chen",{x:34,y:12}];
 var matrix = [[1,2,3],[4,5,6],[7,8,9]];
 var base = 1024;
 var table = [base,base+2,base+4];
+/* jshint -W128 */
 var sparseArray = [1,,,,5];
 
 console.log(a4);
