@@ -26,7 +26,7 @@ var sparseArray = [1,,,,5];
 console.log(a4);
 console.log(a4[3]);
 
-console.log(matrix)
+console.log(matrix);
 console.log(matrix[1]);
 
 console.log(table[2]);
