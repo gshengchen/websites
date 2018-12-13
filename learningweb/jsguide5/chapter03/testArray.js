@@ -9,7 +9,6 @@ a[3] = {x:1,y:2};
 console.log(a);
 console.log(a[1]);
 
-
 var a2 = new Array(1.2,"javascript",true,{x:2,y:2});
 console.log(a2);
 console.log(a2[2]);
@@ -29,6 +28,7 @@ console.log(a4[3]);
 
 console.log(matrix);
 console.log(matrix[1]);
+console.log(matrix[0][1]);
 
 console.log(table[2]);
 

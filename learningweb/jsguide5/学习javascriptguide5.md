@@ -70,6 +70,19 @@ null // 空对象，对象缺省值
 
 Javascript中有很多关键字，它们是语言中语法的一部分，标识符应该避免使用。此外，还应该避免使用JavaScript中预定义的全局变量和全局函数。
 
+|关键字|关键字|关键字|关键字|关键字|
+|--|--|--|--|--|
+|break|delete|function|return|typeof|
+|case|do|if|switch|var|
+|catch|else|in|this|void|
+|continue|false|instanceof|throw|while|
+|debugger|finally|new|true|with|
+|default|for|null|try|
+
+ECMAscript保留的关键字： class、const、enum、export、extends、import、super。
+在严格模式下的保留关键字： implements、let、private、public、yield、interface、package、protected、static、arguments、eval。
+ECMAscript 3 将所有的java的关键字都列为保留字。javascript具体实现与运行环境同时预定义很多全局变量和函数，应当尽量避免使用它。如：arguments、encodeURI、Infinity、Number、RegExp、Array、encodeURIComponent、isFinite、Object、String、Boolean、Error、isNan、parseFloat、SyntaxError、Date、eval、JSON、parseInt、TypeError、decodeURI、EvalError、Math、RangerError、undefined、decodeURIComponent、Function、Nan、ReferenceError、URIError。
+
 ## 第三章 数据类型和值
 
 计算机程序是通过操作值来运行的，能够表示并操作的值的类型称为数据类型（datetype）。Javascript定义的基本数据类型：数字、字符串、布尔值、null和undefined。后面两种只定义了一个值。
@@ -326,3 +339,11 @@ var base = 1024;
 var table = [base,base+2,base+4];
 var sparseArray = [1,,,,5];
 ~~~
+
+### 3.7 NULL
+
+javascript关键字NULL是一个特殊的值，表示无值。常常看作对象类型的一个特殊值即代表无对象的值。null有别与其他所有的值，表示不是有效的数字、字符串、布尔、对象、数组和函数。
+
+* null用于布尔环境，转换成false。
+* null用于数字环境，转换为0。
+* null用于字符串环境，转换为“null”。
