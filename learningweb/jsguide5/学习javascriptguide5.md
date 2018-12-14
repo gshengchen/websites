@@ -342,8 +342,21 @@ var sparseArray = [1,,,,5];
 
 ### 3.7 NULL
 
-javascript关键字NULL是一个特殊的值，表示无值。常常看作对象类型的一个特殊值即代表无对象的值。null有别与其他所有的值，表示不是有效的数字、字符串、布尔、对象、数组和函数。
+javascript关键字NULL是一个特殊的值，表示无值。常常看作对象类型的一个特殊值即代表无对象的值（即空对象引用）。null有别与其他所有的值，表示不是有效的数字、字符串、布尔、对象、数组和函数。
 
 * null用于布尔环境，转换成false。
 * null用于数字环境，转换为0。
 * null用于字符串环境，转换为“null”。
+* 用typeof检查类型返回object。
+* 主动释放一个变量引用的对象，表示一个变量不再指向任何对象地址。
+* 当使用完一个比较大的对象时，需要对其进行释放内存时，设置为 null。
+
+### 3.8 undefined
+
+使用一个未声明的变量时，或者使用了已经声明但没有赋值的变量时，又或者使用一个不存在的对象属性时，返回的值就是undefined。
+在 JavaScript 中, undefined 是一个没有设置值的变量。typeof 一个没有值的变量会返回 undefined。
+
+* null 和 undefined 的值相等，但类型不等。typeof null 返回object，typeof undefined 返回undefined。
+* undefined用于布尔环境，转换为false。
+* undefined用于数字环境，转换为NaN。
+* undefined用于字符串环境，转换为undefined。
