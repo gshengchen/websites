@@ -105,19 +105,38 @@ hypot = Math.sqrt(x*x + y*y);
 ~~~
 
 * 数值转换：JavaScript可以把数字格式化成字符串或者把字符串解析成数字。
-* 特殊的数值，JavaScript还使用了一些特殊的值：
+* 全局的特殊值：NaN、Infinity。
+* Number对象是原始数值的包装类,在必要时,JavaScript 会自动地在原始数据和对象之间转换。可以用构造函数创建数值对象。也可以直接调用Number（x）函数，如果参数不是数字，返回NaN。
 
-|常量|含义|
+~~~javascript
+  var n = new Number(122); // 返回是Number对象。
+  var n2 = Number(14); // 返回是数值 14；
+~~~
+
+* Number对象的静态属性，调用方法Number.属性：
+
+|属性|含义|
 |--|--|
-|Infinity|表示无穷大|
-|NaN|非数字值|
+|Number.Infinity|表示无穷大|
+|Number.NaN|非数字值|
 |Number.MAX_VALUE|可表示的最大数|
 |Number.MIN_VALUE|可表示的最小数|
 |Number.NaN|特殊的非数字值|
 |Number.POSTITIVE_INFINITY|表示正无穷大|
 |Number.NEGATIVE_INFINITY|表示负无穷大|
 
-相关函数isFinite（）、isNaN（）来检测。
+可用相关函数isFinite（）、isNaN（）来检测。
+
+* Number对象的方法：
+
+|方法|说明|
+|--|--|
+|toString(radix)|把数字转换为字符串，使用参数指定的基数（2~36），省略参数，使用基数10。|
+|toLocaleString()|把数字转换为字符串，使用本地数字格式顺序，可能影响小数点和千分位分隔符的标点符号。|
+|toFixed(digits)|把数字转换为字符串，结果的小数点后有指定位数的数字。参数就是小数点的数字位数，是0~20值，如果省略参数，就是0。返回值是Number的字符串表示，小数位是digits，有必要进行舍入，也可以用0补足。如果大于1e+21，该方法调用toString（）。|
+|toExponential(digits)|把对象的值转换为指数计数法。参数digits小数点后的位数（0~20），返回值是Number的指数的字符串表示，小数位是digits，必要时进行舍入，也可以用0补足。|
+|toPrecision(precision)|把数字格式化为指定的长度。参数procision（1~21）。返回值是Number字符串表示，包含precision个有效位，如果precision足够大就使用小数点，否则，使用指数法。必要时进行舍入，也可以用0补足。|
+|valueOf（）|返回一个Number对象的基本数字值。|
 
 ### 3.2 字符串
 
@@ -360,3 +379,58 @@ javascript关键字NULL是一个特殊的值，表示无值。常常看作对象
 * undefined用于布尔环境，转换为false。
 * undefined用于数字环境，转换为NaN。
 * undefined用于字符串环境，转换为undefined。
+
+### 3.9 Date对象与String对象
+
+JavaScript提供了表示日期和时间的对象类，可以用来操作此类型的数据。
+
+* 创建Date对象：用Date构造函数创建对象。有四种形式：
+ 1. new Date（），返回当前的日期与时间；
+ 2. new Date(milliseconds),返回日期是距1970.1.1 0：0：0（UTC）的milliseconds毫秒；
+ 3. new Date（DateString），声明了日期与时间字符串；
+ 4. new Date(y,m,d,h,m,s,ms),除了y与m，其他可省略，使用本地时间，而不是UTC，除了年与天数，其他参数从0开始。
+
+~~~javascript
+var now = new Date(); //当前日期与时间
+var xmas = new Date(2018,11,17);//年、月（0-11）、日、小时（0-23）、分钟(0-59)、秒(0-59)、毫秒(0-999)
+var d1 = new Date(1000000000);//从1970.1.1 过去的毫秒数
+var d2 = new Date('2018-11-22 06:18:00');// 日期字符串
+
+~~~
+
+* 使用Date对象的方法，可以得到与设置日期与时间的值。
+
+|方法|描述|
+|--|--|
+|Date()|返回当日的日期和时间字符串。直接调用|
+|getTime()|返回 1970 年 1 月 1 日至今的毫秒数。|
+|getTimezoneOffset()|返回本地时间与格林威治标准时间 (GMT) 的分钟差。|
+|get[UTC]Date()|从 Date 对象返回月中的[世界时的]一天 (1 ~ 31)，无参数。|
+|get[UTC]Day()|从 Date 对象返回周中的[世界时的]一天 (0 ~ 6)，无参数。|
+|get[UTC]Month()|从 Date 对象返回[世界时的]月份 (0 ~ 11)，无参数。|
+|get[UTC]FullYear()|从 Date 对象返回四位数的[世界时的]年份，无参数。|
+|get[UTC]Hours()|返回 Date 对象的[世界时的]小时 (0 ~ 23)，无参数。|
+|get[UTC]Minutes()|返回 Date 对象的[世界时的]分钟 (0 ~ 59)，无参数。|
+|get[UTC]Seconds()|返回 Date 对象的[世界时的]秒钟 (0 ~ 59)，无参数。|
+|get[UTC]Milliseconds()|[世界时]返回 Date 对象的毫秒(0 ~ 999)。|
+|getYear()|用getFullYear（）代替。|
+|parse(date)|返回1970年1月1日午夜到指定日期（字符串）的毫秒数，静态方法，参数是含有要解析日期与时间的字符串。|
+|setTime(milliseconds)|以毫秒设置 Date 对象，参数是毫秒数，返回的就是参数的毫秒数。|
+|set[UTC]Date(day_of_month)|[根据世界时]设置 Date 对象中月份的一天 (1 ~ 31)，返回毫秒数。|
+|set[UTC]Month(month[,day])|[根据世界时]设置 Date 对象中的月份 (0 ~ 11),可选月份的一天（1~31）。|
+|set[UTC]FullYear(year[,month[,day]])|[根据世界时]设置 Date 对象中的年份（四位数字）。|
+|setYear()|用setFullYear()代替。|
+|set[UTC]Hours(h[,m[,s,[ms]]])|[根据世界时]设置 Date 对象中的小时 (0 ~ 23)。|
+|set[UTC]Minutes(m[,s[,ms]])|[根据世界时]设置 Date 对象中的分钟 (0 ~ 59)。|
+|set[UTC]Seconds(s[,ms])|[根据世界时]设置 Date 对象中的秒钟 (0 ~ 59)。|
+|set[UTC]Milliseconds(ms)|[根据世界时]设置 Date 对象中的毫秒 (0 ~ 999)。|
+|toSource()|返回该对象的源代码。|
+|to[UTC]String()|[世界时]把 Date 对象转换为字符串。|
+|toTimeString()|把 Date 对象的时间部分转换为字符串。|
+|toDateString()|把 Date 对象的日期部分转换为字符串。|
+|toGMTString()|请使用 toUTCString() 方法代替。|
+|toLocaleString()|根据本地时间格式，把 Date 对象转换为字符串。|
+|toLocaleTimeString()|根据本地时间格式，把 Date 对象的时间部分转换为字符串。|
+|toLocaleDateString()|根据本地时间格式，把 Date 对象的日期部分转换为字符串。|
+|UTC(y,mon,d,h,m,s,ms)|根据世界时返回 1970 年 1 月 1 日 到指定日期的毫秒数。除了h和mon，其他是可选的。是静态方法，返回值同parse（）。参数的值是UTC，而构造函数Date是本地时间。|
+|valueOf()|返回 Date 对象的原始值。|
