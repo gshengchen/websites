@@ -253,7 +253,7 @@ var number = str_value - 0;//快速转换为数字，但不能用+；
 ~~~
 
 Number对象的构造函数Number（）可以转换数字，但比较严格，虽然允许开头和结尾的空白，不能出现其他非数字字符串。
-parseInt、parseFloat 可以在字符串开始处转换数字，parseInt第二个参数可以指定解析的基数。
+javascript全局函数parseInt、parseFloat 可以在字符串开始处转换数字，parseInt第二个参数可以指定解析的基数。
 
 ~~~javascript
 parseInt('3 blind mice');//3
