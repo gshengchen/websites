@@ -36,3 +36,13 @@
  console.log(Math.E);
  console.log(Math.SQRT2);
  console.log(Math.SQRT1_2);
+
+ console.log("Math对象的方法：");
+
+ console.log(Math.ceil(3.6)); //向上取整
+ console.log(Math.floor(3.7)); //向下取整
+ console.log(Math.round(3.7)); //四舍五入
+ console.log(Math.round(3.27));
+
+ console.log(Math.sin(Math.PI/2));
+ console.log(Math.tan(Math.PI/4));
