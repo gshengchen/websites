@@ -464,6 +464,7 @@ javascript关键字NULL是一个特殊的值，表示无值。常常看作对象
 JavaScript提供了表示日期和时间的对象类，可以用来操作此类型的数据。
 
 * 创建Date对象：用Date构造函数创建对象。有四种形式：
+
  1. new Date（），返回当前的日期与时间；
  2. new Date(milliseconds),返回日期是距1970.1.1 0：0：0（UTC）的milliseconds毫秒；
  3. new Date（DateString），声明了日期与时间字符串；
