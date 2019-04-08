@@ -1,0 +1,11 @@
+body {
+    font: 100%/1.3 sans-serif;
+}
+
+.architect p+p {
+    color: red;
+}
+
+/* .architect p~p {
+    color: red;
+} */

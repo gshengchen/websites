@@ -1,0 +1,50 @@
+body {
+    font-family:verdana, Geneva, Tahoma, sans-serif;
+    font-size: 100%;
+}
+
+h1,
+h2 {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    font-weight: normal;
+}
+
+.intro{
+    line-height: 1.45;
+}
+
+/* p{
+    font-style: italic;
+    
+} */
+em,a:link,.intro  .subhead{
+    font-weight: bold;
+}
+
+h1{
+    font-size: 2.1875em;
+    /* 35px/16px */
+}
+
+h2{
+    font-size: 1.75em;
+    /* 28px/16px */
+}
+
+.intro .subhead{
+    font-size: 1.125em;
+    /* 18px/16px */
+}
+
+.intro p{
+    font-size: 1.00625em;
+    /* 17px/16px */
+}
+
+.project p{
+    font-size: 0.9375em;
+    /* 15px/16px */
+
+    line-height: 1.65;
+    /* 15px*1.65=24.75 */
+}

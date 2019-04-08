@@ -1,0 +1,19 @@
+body{
+    background-image: url(../img/bg-pattern.png);
+    color:#ff0;
+
+}
+
+p{
+    background-color: hsl(95,100%,28%);
+    font-size: 1.75em;
+    padding: 0.5em;
+}
+
+.test-1{
+    background-color: hsla(95,100%,14%,0.75);
+}
+
+.test-2{
+    background-color: hsla(95,100%,28%,0.4)
+}

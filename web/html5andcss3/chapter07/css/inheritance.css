@@ -1,0 +1,21 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+div{
+   border:1px solid #000000;
+   overflow: hidden;
+   padding: 0 1em 0.25em;
+
+}
+
+p{
+    color:#36c;
+    font-weight: bold;
+}
+
+img{
+    float: left;
+    margin-right: 1em;
+    /* margin-bottom: 0.25em; */
+}
