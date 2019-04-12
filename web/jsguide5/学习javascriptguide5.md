@@ -284,10 +284,9 @@ String对象是字符串的包装类，String 对象用于处理文本（字符�
 |charAt(index)|返回在指定位置的字符。用法：strObj.charAt(index)|
 |charCodeAt(index)|返回在指定的位置的字符的 Unicode 编码。用法：strObj.charCodeAt(index)|
 |concat(str1[,...])|连接两个或更多字符串，并返回新的字符串。用法：strObj.concat(str1[,...])|
-|fixed()|以打字机文本显示字符串。|
-|fontcolor()|使用指定的颜色来显示字符串。|
-|fontsize()|使用指定的尺寸来显示字符串。
-|
+|fixed()|以打字机文本显示字符串。HTML 包装方法：strObj.fixed()|
+|fontcolor(color)|使用指定的颜色来显示字符串。HTML 包装方法：strObj.fontcolor(color)|
+|fontsize(size)|使用指定的尺寸来显示字符串。size:1~7 HTML 包装方法：strObj.fontsize(size)|
 |fromCharCode(code)|将 Unicode 编码转为字符。静态方法:String.fromCharCode(code)。|
 |indexOf()|返回某个指定的字符串值在字符串中首次出现的位置。|
 |includes()|查找字符串中是否包含指定的子字符串。|
