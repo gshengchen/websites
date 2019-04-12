@@ -7,7 +7,7 @@ int main(){
      
     printf("华氏\t摄氏\n");
     printf("=================\n");
-
+     
     for(fahr = 0 ; fahr <= 300 ;fahr += 20 ){
         celsius = 5.0 * (fahr - 32.0 ) / 9.0;
         printf("%3.0f\t%5.1f\n", fahr, celsius);
