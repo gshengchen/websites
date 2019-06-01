@@ -288,10 +288,13 @@ String对象是字符串的包装类，String 对象用于处理文本（字符�
 |fontcolor(color)|使用指定的颜色来显示字符串。HTML 包装方法：strObj.fontcolor(color)|
 |fontsize(size)|使用指定的尺寸来显示字符串。size:1~7 HTML 包装方法：strObj.fontsize(size)|
 |fromCharCode(code)|将 Unicode 编码转为字符。静态方法:String.fromCharCode(code)。|
-|indexOf()|返回某个指定的字符串值在字符串中首次出现的位置。|
-|includes()|查找字符串中是否包含指定的子字符串。|
-|lastIndexOf()|从后向前搜索字符串，并从起始位置（0）开始计算返回字符串最后出现的位置。|
-|match()|查找找到一个或多个正则表达式的匹配。|
+|indexOf(str[,start])|返回某个指定的字符串值str在字符串中首次出现的位置,start可选。没有找到返回-1。用法:strObj.indexof(str[,start])。|
+|includes(str[, start])|查找字符串中是否包含指定的子字符串str。start可选，设置从那个位置开始查找，默认为 0。找到匹配的字符串返回 true，否则返回 false。用法:strObj.includes(str[,start])。|、
+|italics()|使用斜体显示字符串。HTML 包装方法：strObj.italics（）。|
+|lastIndexOf(str[,start)|从后向前搜索字符串，并从起始位置（0）开始计算返回字符串最后出现的位置。用法同indexOf（）。|
+|link(url)|将字符串显示为超链接。HTML 包装方法：strObj.link(url)。|
+|localeCompare(target)|用本地特定的顺序来比较两个字符串。用法：strObj.lovaleCompare(target)。|
+|match(regexp)|查找找到一个或多个正则表达式的匹配。返回Array类型的数组。 regexp没有全局标志 g，则只执行一次匹配。 没找到匹配结果返回 null 。用法：strObj.match(regexp)。|
 |repeat()|复制字符串指定次数，并将它们连接在一起返回。|
 |replace()|在字符串中查找匹配的子串， 并替换与正则表达式匹配的子串。|
 |search()|查找与正则表达式相匹配的值。|
