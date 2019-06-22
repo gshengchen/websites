@@ -1,5 +1,5 @@
 /**
- * 练习1-9 将输入复制到输出，并将连续多个空格用一个空格代替
+ * 练习1-12 编写每行一个单词的形式打印其输入
  */
 
 #include <stdio.h>
@@ -10,16 +10,18 @@ void main()
 {
     int c, state;
     state = OUT;
+
     while ((c = getchar()) != EOF)
     {
-        if (c == ' ' || c == '\t')
+        if (c == ' ' || c == '\t' || c == '\n')
         {
             if (state == IN)
-                putchar(' ');
+                putchar('\n');
             state = OUT;
         }
-        else 
+        else
         {
+            //  if (state == OUT)
             state = IN;
             putchar(c);
         }
