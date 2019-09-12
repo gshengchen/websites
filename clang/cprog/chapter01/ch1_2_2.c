@@ -18,7 +18,7 @@ void main()
     upper = 300;
     step = 20;
 
-    fahr = lower;
+     fahr = lower;
 
     while (fahr <= upper)
     {
