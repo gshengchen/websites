@@ -1,0 +1,68 @@
+ {
+     "log": {
+         "access": "/var/log/v2ray/access.log",
+         "loglevel": "info",
+         "error": "/var/log/v2ray/error.log"
+     },
+     "inbounds": [{
+             "streamSettings": {
+                 "network": "tcp"
+             },
+             "protocol": "vmess",
+             "port": 4617,
+             "settings": {
+                 "clients": [{
+                     "alterId": 100,
+                     "security": "auto",
+                     "id": "bfbc77a1-4d85-490c-9de3-e0b8f70359ac",
+                     "level": 1
+                 }]
+             }
+         },
+         {
+             "protocol": "shadowsocks",
+             "port": 4620,
+             "settings": {
+                 "method": "aes-256-cfb",
+                 "password": "gspasswd",
+                 "udp": false
+             }
+         }
+     ],
+     "outbounds": [{
+             "protocol": "freedom",
+             "settings": {}
+         },
+         {
+             "tag": "blocked",
+             "protocol": "blackhole",
+             "settings": {}
+         }
+     ],
+     "routing": {
+         "settings": {
+             "rules": [{
+                 "ip": [
+                     "0.0.0.0/8",
+                     "10.0.0.0/8",
+                     "100.64.0.0/10",
+                     "127.0.0.0/8",
+                     "169.254.0.0/16",
+                     "172.16.0.0/12",
+                     "192.0.0.0/24",
+                     "192.0.2.0/24",
+                     "192.168.0.0/16",
+                     "198.18.0.0/15",
+                     "198.51.100.0/24",
+                     "203.0.113.0/24",
+                     "::1/128",
+                     "fc00::/7",
+                     "fe80::/10"
+                 ],
+                 "type": "field",
+                 "outboundTag": "blocked"
+             }]
+         },
+         "strategy": "rules"
+     }
+ }
