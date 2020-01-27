@@ -10,4 +10,4 @@ function fn1(){
     fn();
 }
 
-fn1();
+fn1(); //=> global
