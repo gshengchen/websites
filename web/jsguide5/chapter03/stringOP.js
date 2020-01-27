@@ -3,6 +3,13 @@ var lastChar = msg.charAt(msg.length -1) ; // 生成d
 var sub= msg.substr(1,4);//生成ello。
 var i = msg.indexOf('e');// 
 
+/* jshint -W043 */
+
+var muliLine ="one \
+two \
+three";
+
+console.log(muliLine);
 console.log(msg);
 console.log(lastChar);
 console.log(sub);

@@ -194,10 +194,12 @@ hypot = Math.sqrt(x*x + y*y);
 
 ### 3.2 字符串
 
-字符串（string）是unicode字符、数字、标点符号等组成。javascript中没有char类型，只能用长度为1的字符串。
+字符串（string）是unicode字符、数字、标点符号等组成的一个不可变序列。javascript中没有char类型，只能用长度为1的字符串。空字符串的长度为0。
+Javascript采用的是UTF-16编码的unicode字符集，字符串是由一组无符号的16位值组成的序列，最常用的Unicode字符是16位内码表示的，不能表示为16位的Unicode字符则遵循UTF-16编码规则：用两个16位值组成一个序列（代理项对）表示。意味一个长度为2的JavaScript字符串有可能表示一个Unicode字符，JavaScript定义的字符串操作方法均作用于16位值，而非字符。
 
-* 字符串的直接量；有单引号或者双引号括起来的unicode字符序列。
+* 字符串的直接量；有单引号或者双引号括起来的unicode字符序列。风格最好统一。
 * 字符串中直接量中的转义序列：用反斜杠"\"后加上一个字符可以表示在字符串中无法出现的字符。
+* 字符串直接量可以拆分成数行，每行用”\“结束。
 
 |序列|所代表的字符|
 |--|--|
@@ -215,7 +217,7 @@ hypot = Math.sqrt(x*x + y*y);
 |\uXXXX|四位16进制XXXX 指定的Unicode字符|
 |\XXX|1-3位八进制指定的latin-1字符，现在不支持|
 
-* 字符串的使用：javascript的字符串内部特性,运算符“+”作用与字符串会把两个字符串连接起来；字符串的length属性，确定字符串的长度；charAt提取单个字符；substr提取子字符串。indexof查找字符位置。
+* 字符串的使用：javascript的字符串内部特性,运算符“+”作用与字符串会把两个字符串连接起来；字符串的length属性，确定字符串的长度；charAt提取单个字符；substr提取子字符串。indexof查找字符位置。字符串可以当做只读数组，用索引来访问。
 
 ~~~javascript
 msg = "hello, " + "world" ;//生成字符串 hello， world
@@ -309,14 +311,17 @@ String对象是字符串的包装类，String 对象用于处理文本（字符�
 |link(url)|将字符串显示为超链接。HTML 包装方法：strObj.link(url)。|
 |localeCompare(target)|用本地特定的顺序来比较两个字符串。用法：strObj.lovaleCompare(target)。|
 |match(regexp)|查找找到一个或多个正则表达式的匹配。返回Array类型的数组。 regexp没有全局标志 g，则只执行一次匹配。 没找到匹配结果返回 null 。用法：strObj.match(regexp)。|
-|repeat()|复制字符串指定次数，并将它们连接在一起返回。|
-|replace()|在字符串中查找匹配的子串， 并替换与正则表达式匹配的子串。|
-|search()|查找与正则表达式相匹配的值。|
-|slice()|提取字符串的片断，并在新的字符串中返回被提取的部分。|
-|split()|把字符串分割为字符串数组。|
-|startsWith()|查看字符串是否以指定的子字符串开头。|
-|substr()|从起始索引号提取字符串中指定数目的字符。|
-|substring()|提取字符串中两个指定的索引号之间的字符。|
+|repeat(count)|复制字符串指定次数，并将它们连接在一起返回，count复制次数。|
+|replace(regexp/substr,replacement)|在字符串中查找匹配的子串， 并替换与正则表达式匹配的子串。replacement可以是字符串，也可以是返回字符串的函数|
+|search(regexp)|查找与正则表达式相匹配的值。返回位置，没找到返回-1|
+|slice(start[,end])|提取字符串的片断，并在新的字符串中返回被提取的部分。start始下标,end是结尾下标但不包括，如果没有指定就到结尾。如果是负数，则该参数规定的是从字符串的尾部开始算起的位置。也就是说，-1 指字符串的最后一个字符。|
+|small()|使用小字号来显示字符串。|
+|split(separator[,howmany])|把字符串分割为字符串数组。separator字符串或正则表达式，从该参数指定的地方分割，howmany可选，如指定则返回的数组元素不多于这个值。|
+|startsWith(str)|查看字符串是否以指定的子字符串str开头。|
+|strike()|使用删除线来显示字符串。|
+|sub()|把字符串显示为下标。|
+|substr(start,length)|从起始索引号提取字符串中指定数目的字符。start为，-1 指字符串中最后一个字符|
+|substring(start[,stop])|提取字符串中两个指定的索引号之间的字符。start为一个非负值，stop-1为结束位|
 |toLowerCase()|把字符串转换为小写。|
 |toUpperCase()|把字符串转换为大写。|
 |trim()|去除字符串两边的空白|
@@ -324,6 +329,22 @@ String对象是字符串的包装类，String 对象用于处理文本（字符�
 |toLocaleUpperCase()|根据本地主机的语言环境把字符串转换为大写。|
 |valueOf()|返回某个字符串对象的原始值。|
 |toString()|返回一个字符串。|
+
+* 模式匹配：
+  Javascript定义了RegExp（）构造函数，创建正则表达。String对象与RegExp对象均定义了利用正则表达式进行模式匹配和查找与替换函数。正则表达式的直接量是用”/“ ”/“定义的，第二个斜线可以跟随一个或者多个字母，用来修饰匹配模式的含义，如：
+
+  ~~~javascript
+   /^HTML/ //匹配以HTML开始的字符串
+   /[1-9][0-9]*/ //匹配以非0数字开头的任意个数字
+   /\bjavascript\b/i //匹配单词javascript忽略大小写
+   var text = "testing: 1, 2, 3";
+   var pattern = /\d+/g;
+   pattern.test(text);
+   text.search(pattern);
+   text.match(pattern);
+   text.replace(pattern,"#");
+   text.split(/\D+/);
+    ~~~
 
 ### 3.3 布尔值
 
