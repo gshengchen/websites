@@ -7,6 +7,8 @@ console.log(product);
 console.log(str_value);
 console.log(number);
 
+console.log(Number("12 b")); // =>NaN
+
 console.log(parseInt('3 blind mice'));//3
 console.log(parseFloat('3.14 meters'));//3.14
 console.log(parseInt('12.51'));//12
