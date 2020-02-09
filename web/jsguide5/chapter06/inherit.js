@@ -25,3 +25,8 @@ c.y =1;
 c.r =2;
 console.log(unitcircle.r);
 console.log(c.r);
+
+var o3 = inherit(o);
+console.log(o3.propertyIsEnumerable("x"));
+o3.y =4;
+console.log(o3.propertyIsEnumerable("y"));
