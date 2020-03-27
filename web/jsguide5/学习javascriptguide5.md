@@ -12,7 +12,7 @@ Javascript的核心语言将数字、字符串和布尔值作为原始数据类�
 ### 1.1 什么是Javascript
 
 * Javascript并非java
-* Javascript并不简单
+* Javascript并不简单.
 
 ### 1.2 Javascript的版本
 
