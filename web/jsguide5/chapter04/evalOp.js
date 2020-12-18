@@ -6,7 +6,7 @@ var geval = eval;
 function f(){
     var x ="local";
     eval("x += ' changed';");
-    return x;
+    return x ;
 }
 function g(){
     var y ='local';
