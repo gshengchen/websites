@@ -1,0 +1,73 @@
+  {
+    "log": {
+        "loglevel": "warning"
+    },
+    "routing": {
+        "domainStrategy": "AsIs",
+        "rules": [
+            {
+                "type": "field",
+                "inboundTag": "wsdoko",
+                "outboundTag": "ssredirect"
+            },
+            {
+                "type": "field",
+                "ip": [
+                    "geoip:private"
+                ],
+                "outboundTag": "blocked"
+            }
+        ]
+    },
+    "inbounds": [
+        {
+            "port": 4616,
+    "listen": "127.0.0.1",
+    "protocol": "vmess",
+    "settings": {
+      "clients": [
+        {
+          "id": "bfbc77a1-4d85-490c-9de3-e0b8f70359ac",
+          "level": 1,
+          "alterId": 100
+        }
+      ]
+    },
+    "streamSettings":{
+      "network": "ws",
+      "wsSettings": {
+           "path": "/gsheng"
+      }
+    }
+  },
+                  {
+            "port": 4620,
+            "protocol": "shadowsocks",
+            "settings": {
+                "method": "chacha20-ietf-poly1305",
+                "ota": false,
+                "password": "gs681127",
+                "network": "tcp,udp"
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "freedom",
+            "settings": {},
+            "tag": "direct"
+        },
+        {
+            "protocol": "blackhole",
+            "settings": {},
+            "tag": "blocked"
+        },
+        {
+            "protocol": "freedom",
+            "tag": "ssredirect",
+            "settings": {
+                "redirect": "127.0.0.1:4620"
+            }
+        }
+    ]
+}

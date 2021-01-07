@@ -1,0 +1,64 @@
+{
+  "log": {
+
+        "loglevel": "warning"
+  },
+  
+  "inbounds": [
+    {
+      "port": 4616,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "bfbc77a1-4d85-490c-9de3-e0b8f70359ac",
+            "alterId": 100
+          }
+        ]
+      },
+      "tag": "in-0",
+      "streamSettings": {
+        "network": "ws",
+        "security": "tls",
+        "wsSettings": {
+          "path": "/gsheng"
+        },
+        "tlsSettings": {
+          "certificates": [
+            {
+              "certificateFile": "",
+              "keyFile": ""
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "direct",
+      "protocol": "freedom",
+      "settings": {}
+    },
+    {
+      "tag": "blocked",
+      "protocol": "blackhole",
+      "settings": {}
+    }
+  ],
+  "routing": {
+    "domainStrategy": "AsIs",
+    "rules": [
+      {
+        "type": "field",
+        "ip": [
+          "geoip:private"
+        ],
+        "outboundTag": "blocked"
+      }
+    ]
+  },
+  "policy": {},
+  "reverse": {},
+  "transport": {}
+}
