@@ -1,7 +1,7 @@
 /**
  * 使用关系逻辑运算符
  */
-package com.breoe.thinking.ch03;
+// package com.breoe.thinking.ch03;
 import java.util.*;
 
 public class Bool {

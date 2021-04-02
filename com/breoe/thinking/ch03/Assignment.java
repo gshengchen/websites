@@ -1,7 +1,7 @@
 /**
  * 第三章 赋值源程序
  */
-package com.breoe.thinking.ch03;
+// package com.breoe.thinking.ch03;
 
 class Number{
     int i;

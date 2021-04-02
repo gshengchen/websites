@@ -1,7 +1,7 @@
 /**
  *  方法调用中的别名处理
  */
-package com.breoe.thinking.ch03;
+// package com.breoe.thinking.ch03;
 
 class Letter{
     char c;

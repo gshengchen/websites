@@ -2,7 +2,7 @@
  * this如果有参数就是都符合参数的构造函数进行调用,
  * 只能用在构造函数中并只能用一次
  */
-package com.breoe.thinking.ch04;
+//package com.breoe.thinking.ch04;
 
 public class Flower {
     private int petalCount = 0;

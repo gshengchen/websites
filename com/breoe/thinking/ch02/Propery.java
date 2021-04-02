@@ -2,7 +2,7 @@
  * 这是Thinking for java 第一个运行程序
  */
 
-package com.breoe.thinking.ch02;
+//package com.breoe.thinking.ch02;
 
 import java.util.*;
 

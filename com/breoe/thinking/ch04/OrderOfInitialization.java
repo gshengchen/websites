@@ -1,7 +1,7 @@
 /**
  * 初始化顺序
  */
-package com.breoe.thinking.ch04;
+// package com.breoe.thinking.ch04;
 
 class Tag{
     Tag(int marker){

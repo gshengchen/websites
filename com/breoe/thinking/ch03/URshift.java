@@ -1,7 +1,7 @@
 /**
  * 测试无符号右移
  */
-package com.breoe.thinking.ch03;
+// package com.breoe.thinking.ch03;
 
 public class URshift {
     public static void main(String[] args){

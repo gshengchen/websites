@@ -1,7 +1,7 @@
 /**
  * 短路求值
  */
-package com.breoe.thinking.ch03;
+// package com.breoe.thinking.ch03;
 
 public class ShortCircuit {
     static boolean test1(int val){

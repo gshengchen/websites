@@ -1,7 +1,7 @@
 /**
  * 按位操作的运算符应用
  */
-package com.breoe.thinking.ch03;
+// package com.breoe.thinking.ch03;
 import java.util.*;
 
 public class BitManipulation {
