@@ -1,7 +1,7 @@
 /**
  * 静态成员初始化
  */
-// package com.breoe.thinking.ch04;
+package com.breoe.thinking.ch04;
 
 class Bowl{
     Bowl(int marker){

@@ -1,7 +1,7 @@
 /**
  * 自变量顺序也能重载
  */
-// package com.breoe.thinking.ch04;
+package com.breoe.thinking.ch04;
 
 public class OverloadingOrder {
     static void print(String s, int i){

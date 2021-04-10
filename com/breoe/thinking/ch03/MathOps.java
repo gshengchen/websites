@@ -1,7 +1,7 @@
 /**
  * 算术运算符的用法
  */
-// package com.breoe.thinking.ch03;
+package com.breoe.thinking.ch03;
 import java.util.*;
 
 public class MathOps {

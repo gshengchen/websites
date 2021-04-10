@@ -1,7 +1,7 @@
 /**
  * 简单的构造器
  */
-// package com.breoe.thinking.ch04;
+package com.breoe.thinking.ch04;
 
 class Rock{
     Rock(){

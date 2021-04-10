@@ -2,7 +2,7 @@
  * 打印Hello，world
  */
 
-//  package com.breoe.thinking.ch02;
+ package com.breoe.thinking.ch02;
 //import java.util.*;
 
 public class HelloWorld {

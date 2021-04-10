@@ -1,7 +1,7 @@
 /**
  * 垃圾回收过程
  */
-//package com.breoe.thinking.ch04;
+package com.breoe.thinking.ch04;
 
 class Chair{
     static boolean gcrun = false;

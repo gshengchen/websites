@@ -1,7 +1,7 @@
 /**
  * 自增自减运算符
  */
-// package com.breoe.thinking.ch03;
+package com.breoe.thinking.ch03;
 
 
 public class AutoInc {

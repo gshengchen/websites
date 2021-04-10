@@ -1,7 +1,7 @@
 /**
  * this 关键字应用
  */
-// package com.breoe.thinking.ch04;
+package com.breoe.thinking.ch04;
 
 public class Leaf {
     private int i = 0;

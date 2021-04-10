@@ -1,7 +1,7 @@
 /**
  * 对象相等比较
  */
-// package com.breoe.thinking.ch03;
+package com.breoe.thinking.ch03;
 
 public class Equivalence {
     public static void main(String[] args){

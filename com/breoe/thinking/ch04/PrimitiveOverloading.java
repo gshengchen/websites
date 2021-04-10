@@ -1,7 +1,7 @@
 /**
  * 基本类型重载
  */
-// package com.breoe.thinking.ch04;
+package com.breoe.thinking.ch04;
 
 public class PrimitiveOverloading {
    static void prt(String s){
