@@ -13,7 +13,7 @@
        
        <p>
            <?php
-            print "ok!"
+            print "hello world!"
             ?>
        </p>
    </main>
